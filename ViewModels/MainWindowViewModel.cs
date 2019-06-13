@@ -18,9 +18,6 @@ namespace TimeManagerAvalo.ViewModels
         public MainWindowViewModel()
         {
             CmdAddNoteToTable = ReactiveCommand.Create(() => { Console.WriteLine("Moin"); });
-            TmpList.Add("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
-            TmpList.Add("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
-            TmpList.Add("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
         }
     }
 }

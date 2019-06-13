@@ -3,24 +3,10 @@
         xmlns:vm="clr-namespace:TimeManagerAvalo.ViewModels;assembly=TimeManagerAvalo"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:TimeManagerAvalo.Views"
         mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
         x:Class="TimeManagerAvalo.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="TimeManagerAvalo">
-
-    <Design.DataContext>
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-  <StackPanel>
-    <StackPanel Margin="10" Orientation="Horizontal">
-      <DatePicker Margin="10"/>
-      <TextBox Watermark="Beschreibung" Margin="10"/>
-      <TextBox Watermark="Zeit" AcceptsTab="False" Margin="10"/>
-      <TextBox Watermark="Notizen" MinWidth="100" Margin="10" AcceptsReturn="True" TextWrapping="Wrap"/>
-    </StackPanel>
-    <Button HotKey="S"
-            Command="{Binding CmdAddNoteToTable}"
-            Content="Speichern"/>
-    <ListBox Items="{Binding TmpList}"/>
-  </StackPanel>
+  <views:AvaloTimeManagerView/>
 </Window>

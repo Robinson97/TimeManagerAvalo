@@ -1,0 +1,37 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:TimeManagerAvalo.ViewModels;assembly=TimeManagerAvalo"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="TimeManagerAvalo.Views.AvaloTimeManagerView">
+ 
+  <UserControl.Styles>
+    <Style Selector="TextBlock.h1">
+      <Setter Property="FontSize" Value="24"/>
+      <Setter Property="Foreground" Value="Blue"/>
+    </Style>
+    <Style Selector="Button.normalStyle">
+      <Setter Property="FontSize" Value="12"/>
+      <Setter Property="Foreground" Value="Black"/>
+      <Setter Property="Background" Value="Gray"/>
+    </Style>
+  </UserControl.Styles>
+  <Design.DataContext>
+    <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  
+  <StackPanel>
+    <TextBlock Text="Meine Zeiterfassung" HorizontalAlignment="Center" Classes="h1"/>
+    <StackPanel Margin="10" Orientation="Horizontal">
+      <DatePicker Margin="10"/>
+      <TextBox Watermark="Beschreibung" Margin="10"/>
+      <TextBox Watermark="Zeit" AcceptsTab="False" Margin="10"/>
+      <TextBox Watermark="Notizen" MinWidth="100" Margin="10" AcceptsReturn="True" TextWrapping="Wrap"/>
+    </StackPanel>
+    <Button HotKey="S"
+            Classes="normalStyle"
+            Command="{Binding CmdAddNoteToTable}"
+            Content="Speichern"/>
+  </StackPanel>
+</UserControl>
